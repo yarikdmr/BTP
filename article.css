@@ -1,0 +1,285 @@
+
+/* Большой заголовок - "НАЗВА" */
+#article-title {
+  text-align: center;
+  font-size: 3em;     /* Покрупнее */
+  font-weight: 700;
+  margin: 40px 0 20px;
+  color: #000;        /* Чёрный цвет */
+}
+
+/* Основной контейнер для статьи */
+#article-content {
+  max-width: 800px;
+  margin: 0 auto 60px;   /* 60px снизу, чтобы «дышало» перед рекомендациями */
+  padding: 0 20px;       /* Горизонтальные отступы на мобильных */
+  background: none;      /* Можно убрать белый фон, если хотим «как на скриншоте» */
+}
+
+
+/* Контейнер, оборачивающий картинку */
+.image-shadow-container {
+  position: relative;     /* Позиционируем для псевдоэлемента */
+  display: inline-block;  /* Либо block, если нужно на всю ширину */
+  margin-bottom: 20px;    /* Отступ после картинки */
+}
+
+/* Сама картинка */
+.image-shadow-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;  /* Картинка выше псевдоэлемента */
+}
+
+/* Псевдоэлемент — красная «подложка» */
+.image-shadow-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #D73636; /* Красный цвет */
+  z-index: 1;
+  /* Смещаем «тень» на 10px вправо и вниз (подбирайте сами) */
+  transform: translate(10px, 10px);
+}
+
+
+
+/* Подзаголовок (h3) */
+#article-subtitle {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 10px 0 30px;
+}
+
+/* h2 внутри статьи */
+#article-content h2 {
+  text-align: left;
+  font-size: 2.5em;
+  margin: 30px 0 30px;
+  font-weight: 400;
+}
+
+/* Параграфы, центр */
+#article-content p {
+  text-align: left;
+  margin: 10px 0 20px;
+}
+
+/* Если в тексте идут списки, выравниваем влево, 
+   т.к. по центру маркеры смотрятся странно */
+#article-content ul, #article-content ol {
+  margin: 10px auto 20px;
+  padding: 0 20px;
+  max-width: 600px; /* Чтобы список не был слишком широким */
+  text-align: left;
+}
+
+/* Стили для второго изображения, 
+   если оно просто вставляется в тексте */
+.inline-image {
+  display: block;
+  margin: 20px auto;  /* Центрируем */
+  width: 100%;        /* или max-width: 600px; если хотите */
+  height: auto;
+}
+
+.back-to-top {
+  position: relative;
+  bottom: 30px;      /* Расстояние от нижнего края */
+  left: 50%;         /* По центру страницы */
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  
+  /* Пример: красная круглая кнопка со стрелкой вверх */
+  background:  url('images/arrow-up.svg') no-repeat center/contain;
+  border-radius: 50%;
+  cursor: pointer;
+  
+  /* Скрыта по умолчанию */
+  display: none;
+  z-index: 9999; /* Поверх других элементов */
+}
+
+
+
+
+
+
+/* --- 1) Заголовок «Może Cię również zainteresować» --- */
+/* Тонкие линии над и под */
+.recomendacie {
+  margin: auto;
+  max-width: 900px;
+  padding: 0 40px;
+}
+
+
+.rec-top-line, .rec-bottom-line {
+  border: none;
+  border-top: 1px solid #111; 
+  margin: 0 auto 20px;
+  width: 95%;
+}
+/* Собственно заголовок */
+.rec-heading {
+  margin: 0 0 20px 0;
+  text-align: left; 
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #111;
+  margin-left: 5%;       /* Чтобы чуть сместить влево, 
+                            как на скрине (см. нужную логику) */
+  text-transform: none;  /* Если не нужен uppercase */
+}
+
+/* --- 2) «Тень» за блоком не прозрачная, а цветная --- */
+/* Внешняя обёртка */
+.recommendation-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto; 
+  border: 2px solid #000;  /* Чёрная рамка */
+  background-color: #444;   /* Тёмно‑серая «подложка» */
+  transform: translate(10px, 10px); /* Смещаем */
+}
+
+/* Сам «белый» блок */
+.recommendation-block {
+  position: relative;
+  background-color: #fff;
+  border: 2px solid #000; 
+  transform: translate(-10px, -10px); 
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; 
+}
+
+/* --- 4) Фото ближе к краю --- */
+/* Убираем лишний отступ (margin-right) */
+/* Например, только 10px вместо 20px */
+.rec-image-container {
+  width: 320px;  
+  height: 180px; 
+  overflow: hidden;
+  flex-shrink: 0; 
+  margin-right: 10px; 
+}
+.rec-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+/* --- Текст (справа) --- */
+.rec-content {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;   /* Заполняет оставшееся место */
+}
+.rec-content h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #111;
+}
+.rec-separator {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #999;
+  margin: 8px 0;
+}
+.rec-content p {
+  margin: 0 0 10px;
+  font-size: 0.95em;
+  color: #444;
+}
+
+/* --- 3) Кнопка «czytacz» серая, c чёрной рамкой, 
+   выравненная по правому краю --- */
+.czytacz-btn {
+  display: inline-block;
+  margin-top: auto;  /* Прижимает кнопку вниз, если блок высокий */
+  margin-left: auto; /* Сдвигает кнопку к правому краю */
+  text-decoration: none;
+  background-color: #444; 
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 0.9em;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: ease-out 0.25s;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Плавний перехід */
+}
+
+.czytacz-btn:hover {
+  box-shadow: 0 0 0 1px black, 6px 6px 4px rgba(0, 0, 0, 0.7); /* Більша тінь при наведенні */
+  transform: translateY(+3px); /* Легке підняття при наведенні */
+  transform: translateX(+3px)
+}
+
+
+@media (max-width: 700px) {
+  .recomendacie {
+    max-width: 300px;
+  }
+  /* Убираем смещение «тени», чтобы блок не выходил за границы */
+  .recommendation-wrapper {
+    transform: none;
+    margin: 10px auto;
+    max-width: 95%; /* Чуть сужаем, чтобы не упиралось в края */
+  }
+  .recommendation-block {
+    transform: none; /* Снимаем смещение -10px,-10px */
+    flex-direction: column; /* Строим блоки по вертикали */
+    align-items: flex-start; /* Картинка и текст слева */
+    padding: 15px;
+  }
+  
+  /* Картинка растягивается на всю ширину, высота auto */
+  .rec-image-container {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 15px; /* Отступ под картинкой */
+  }
+  .rec-image-container img {
+    height: auto;
+    max-width: 100%;
+    object-fit: cover; 
+  }
+
+  /* Текстовый блок тоже на всю ширину */
+  .rec-content {
+    margin: 0; /* Убираем лишние горизонтальные отступы */
+    width: 100%;
+  }
+
+  /* Кнопку выравниваем по центру (или по левому краю) */
+  .czytacz-btn {
+    margin-left: 0;
+    margin-top: 10px; 
+    align-self: center; /* Расположить кнопку по центру */
+  }
+}
+
+@media (max-width: 350px) {
+  .recomendacie {
+    padding: 0 10px;
+  }
+}
+
+
+
+
+

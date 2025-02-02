@@ -1,0 +1,324 @@
+
+body {
+  background-color: #fff; /* widkl potom*/
+}
+
+/* Контейнер для поиска */
+.search-container {
+  position: relative;     /* Чтобы можно было позиционировать иконку и dropdown */
+  width: 300px;           /* Примерная ширина поля поиска */
+  margin: 20px auto;      /* Центрируем, если нужно */
+}
+
+/* Сам "контейнер" под иконку */
+.search-container .search-icon {
+  position: absolute;
+  top: 57%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  /* Убираем color, т.к. для SVG мы используем fill */
+}
+
+/* Само SVG (лупа) красим в красный */
+.search-container .search-icon svg path {
+  fill: #D73636;
+}
+
+/* Поле ввода */
+#search-input {
+  width: 100%;
+  padding: 10px 10px 10px 34px; /* Отступ слева под иконку */
+  border: 1px solid #999;
+  border-radius: 0;       /* Если нужны острые углы */
+  font-size: 1em;
+  outline: none;          
+  box-sizing: border-box; 
+}
+
+/* Выпадающий список подсказок */
+.dropdown {
+  position: absolute;
+  top: 42px;         
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none;  /* По умолчанию скрыто */
+}
+
+.dropdown li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.dropdown li:hover {
+  background-color: #f4f4f4;
+}
+
+
+
+
+
+
+/* vania css 23.01.25 */
+
+
+
+
+
+
+
+
+/* Оформление секции можно оставить как есть или подстроить под изменения */
+.article-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Сам блок */
+.article-section .article-block {
+  background-color: #D73636; /* Красный фон */
+  color: #fff;
+  /* 2) Убираем скругления */
+  border-radius: 0; 
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  width: calc(33.33% - 20px);
+  max-width: 300px;
+  /* height: 450px; Если нужно фиксированная высота — оставьте */
+  
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* Внутренние отступы при необходимости – для текста/кнопки */
+  /* padding: 8px; */
+  position: relative;
+  
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+.article-section .article-block_random {
+  background-color: #ffffff; /* Красный фон */
+  color: black;
+  /* 2) Убираем скругления */
+  border-radius: 0; 
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  width: calc(33.33% - 20px);
+  max-width: 300px;
+  /* height: 450px; Если нужно фиксированная высота — оставьте */
+  
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* Внутренние отступы при необходимости – для текста/кнопки */
+  /* padding: 8px; */
+  position: relative;
+  
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при наведении */
+.article-section .article-block:hover {
+  /* transform: scale(1.05);  не потрібно, це зайве візуальне навантаження*/
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.article-image {
+  position: relative;
+}
+
+.article-img {
+  width: 100%;
+  height: 180px;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  object-fit: cover;
+  border-radius: 0;
+  margin-bottom: 0;
+  border: 2px solid black;
+}
+
+/* 1) Смещаем фото немного в сторону. 
+   Например, чуть правее за счёт transform или margin: */
+.article-section .article-block img {
+  width: 100%;
+  height: 180px;  
+  position: absolute;
+    left: -10px;
+    top: -10px;
+  object-fit: cover;
+  /* Отключаем скругления и смещаем вправо (или влево) */
+  border-radius: 0;
+  margin-bottom: 0;
+  border: 2px solid black;
+}
+
+/* Дополнительные стили, если где-то используется .article-content */
+.article-content {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    text-align: center;
+    padding: 20px;
+}
+
+.article-content img {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+/* Заголовок */
+.article-block h2 {
+  /* 3) Центрируем текст */
+  text-align: center;
+  font-size: 1.2em;
+  margin: 16px 0 8px;
+  color: #fff;
+  
+}
+.article-block_random h2 {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 16px 0 8px;
+  color: black;
+}
+
+.article-block_random p {
+  text-align: center;
+  margin: 8px 16px;
+  color: black;
+  font-size: 0.9em;
+  
+}
+
+
+.article-section .article-block_random h2::after {
+  content: "";
+  display: block;
+  width: 80%; 
+  height: 1px;
+  background-color: #0b0909;
+  margin: 8px auto 0; /* центрирование полоски */
+}
+
+
+.article-block_random a {
+  letter-spacing: 1px;
+  display: inline-block;
+  background-color: #ffffff; /* Білий фон */
+  color: #D73636; /* Червоний текст */
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 8px 16px;
+  
+  border-radius: 0;
+  border: 1px solid black; /* Чорна рамка */
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Плавний перехід */
+}
+.article-block_random a:hover {
+  background-color: black; /* Чорний фон при наведенні */
+  color: white; /* Білий текст при наведенні */
+  box-shadow: 0 0 0 2px black, 8px 8px 5px rgba(0, 0, 0, 0.7); /* Більша тінь при наведенні */
+  transform: translateY(+3px); /* Легке підняття при наведенні */
+  transform: translateX(+3px)
+}
+
+/* 4) Добавим полоску под заголовок (белую) */
+.article-section .article-block h2::after {
+  content: "";
+  display: block;
+  width: 80%; 
+  height: 1px;
+  background-color: #fff;
+  margin: 8px auto 0; /* центрирование полоски */
+}
+
+/* Короткий текст */
+.article-section .article-block p {
+  text-align: center; /* 3) Центрируем текст */
+  margin: 8px 16px;
+  color: #fff;
+  font-size: 0.9em;
+  
+}
+
+/* 5) Двигаем кнопку, добавляем ей тень */
+.article-section .article-block a {
+  display: inline-block;
+  /* Цвет фона кнопки */
+  background-color: #ffffff;
+  /* Цвет текста */
+  color: #D73636;
+  /* Шрифт чуть плотнее */
+  font-weight: 600;
+  /* Размер шрифта подберите по вкусу */
+  font-size: 1rem;
+  /* Убираем подчеркивание, если это <a> */
+  text-decoration: none;
+  
+  /* Внутренние отступы */
+  padding: 8px 16px;
+  
+  /* Делать ли углы прямыми или скругленными? */
+  border-radius: 0;
+  /* При желании добавить тонкую границу:
+     border: 1px solid #D73636; 
+     тогда тень будет поверх или наоборот */
+  
+  /* Тень вокруг кнопки, имитирующая бордер+отступ */
+  box-shadow: 
+    0 0 0 2px #fff,                /* «Обводка» в 2px белого цвета */
+    5px 5px 3px rgba(0, 0, 0, 0.5);  /* Собственно тень под кнопкой */
+  
+  /* Плавные переходы при наведении, если нужно менять тень/позицию */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.article-section .article-block a:hover {
+  box-shadow: 
+    0 0 0 2px #fff,
+    4px 4px 2px rgba(0, 0, 0, 0.7);
+  transform: translateY(2px);
+}
+
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .article-section .article-block, .article-section .article-block_random {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 480px) {
+  .article-section .article-block, .article-section .article-block_random {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+

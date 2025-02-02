@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="article.css">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+      <title>Bike Trip Planner</title>
+      <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+
+   <!-- нове меню бургер -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">BIKE TRIP PLANNER</a>
+  
+    <!-- Кнопка (бургер), видна только на мобильных -->
+    <div class="menu-toggle" id="mobile-menu">
+      <!-- Можно использовать любой символ/иконку -->
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+    </div>
+  
+    <!-- Ссылки -->
+    <div class="nav-links" id="nav-links">
+      <a href="map.html">Trasy</a>
+      <a href="theori.html">Artykuły</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="contact.html">O mnie</a>
+    </div>
+
+    <div class="reading-progress"></div>
+    
+  </nav>
+  <script>
+    const burger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+  
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
+
+<a href="theori.html" class="back-button">
+  <img src="images/left-normal.png" alt="Back"> 
+</a>
+
+
+<!-- article -->
+      <div class="article-title" id="article-title"></div>
+
+      <div id="article-content" class="article-content">
+
+      </div>
+      <a href="#" class="back-to-top" id="backToTop"></a>
+
+      <script>
+        // Получаем ссылку на кнопку
+        const backToTop = document.getElementById('backToTop');
+      
+        // Показываем кнопку, когда проскроллили страницу на 300px вниз
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTop.style.display = 'block';
+          } else {
+            backToTop.style.display = 'none';
+          }
+        });
+      
+        // При клике — плавно прокручиваемся вверх
+        backToTop.addEventListener('click', (e) => {
+          e.preventDefault(); // Отключаем переход по якорю href="#"
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      </script>
+      
+
+
+
+      <!-- рекомендации -->
+
+      <!-- Тонкая линия сверху -->
+<div class="recomendacie">
+  <hr class="top-line">
+  
+  <!-- Заголовок "Może Cię również zainteresować" -->
+  <h2 class="recommendation-heading">Może Cię również zainteresować</h2>
+  
+  <!-- Контейнер, куда вставится рекомендация -->
+  <div id="recommendation-container"></div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+
+
+<footer class="page-footer">
+  <p>
+    Made by <a href="contact.html" class="accent">Yaroslav Domaretskyi</a><br>
+    Student of <a href="https://pollub.pl/" target="_blank" class="accent">Lublin University of Technology</a><br>
+    [<span class="accent">2025</span>]
+  </p>
+</footer>
+
+      
+
+  </body>
+  <script src="article.js"></script>
+  <script src="script.js"></script>
+  </html>

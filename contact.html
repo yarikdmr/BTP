@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="about_me.css">
+  <title>Bike Trip Planner</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- нове меню бургер -->
+  <nav class="navbar navbar_contact">
+    <a href="index.html" class="logo logo_contact">BIKE TRIP PLANNER</a>
+
+    <!-- Кнопка (бургер), видна только на мобильных -->
+    <div class="menu-toggle" id="mobile-menu">
+      <!-- Можно использовать любой символ/иконку -->
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+    </div>
+
+    <!-- Ссылки -->
+    <div class="nav-links" id="nav-links">
+      <a href="map.html">Trasy</a>
+      <a href="theori.html">Artykuły</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="contact.html">O mnie</a>
+    </div>
+  </nav>
+  <script>
+    const burger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
+  <div class="main-container">
+    <div class="container_me">
+      <div class="photo_me">
+        <img src="images/me.webp" alt="Your Photo">
+      </div>
+      <div class="content_me">
+        <div class="about_me">
+          <h1>About Me</h1>
+        </div>
+        <div class="description_me">
+          Jestem studentem Politechniki Lubelskiej, a ta strona została stworzona jako część projektu inżynierskiego na
+          temat: "Wykonanie strony internetowej do planowania wycieczek rowerowych". W ramach pracy zaprojektowałem
+          stronę internetową, stworzyłem jej strukturę, przeprowadziłem analizę grupy docelowej i testowanie. Strona
+          została zbudowana przy użyciu różnych skryptów, własnego projektu graficznego oraz systemu generowania
+          artykułów.
+        </div>
+
+      </div>
+    </div>
+    <div class="under-description">
+      Nazywam się Jarosław Domaretskyi, a rower i podróże to moje największe pasje. Od dziecka uwielbiałem jeździć na
+      rowerze, testując różne modele, ale najbardziej cenię sobie rowery szosowe. W 2022 roku postanowiłem połączyć moje
+      dwie pasje – rower i podróże. Razem z przyjacielem wybraliśmy się na pierwszą wycieczkę rowerową po Europie, która
+      była niezapomnianym doświadczeniem.
+      <br> Na tej stronie znajdziesz artykuły mojego autorstwa oraz galerię zdjęć, z których wszystkie są moimi
+      autorskimi pracami.
+    </div>
+
+    <div class="under-blocks">
+      <div class="under-left">
+        <p class="under-left__social">My Social Media</p>
+        <ul>
+          <li><a href="https://www.instagram.com/yarik_dmr/" target="_blank">Inst</a></li>
+          <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=yar123uak@gmail.com" target="_blank">Mail</a></li>
+          <li><a href="https://github.com/yarikdmr/yarikdmr.github.io" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="under-red">
+        <div>Moj rower</div>
+        <div><a href="#">Cervelo r3 2015</a></div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+  <div class="footer-photo-banner">
+    <div class="photo-banner">
+    </div>
+    <footer class="page-footer-about page-footer-about_about">
+
+      <img class="photo-bike" src="images/cervelo_r3.png" alt="Photo Banner">
+
+      <p>
+        Made by <a href="contact.html" class="accent-about">Yaroslav Domaretskyi</a><br>
+        Student of <a href="https://pollub.pl/" target="_blank" class="accent-about">Lublin University of Technology</a><br>
+        [<span class="accent-about">2025</span>]
+      </p>
+
+    </footer>
+  </div>
+
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>

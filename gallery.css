@@ -1,0 +1,75 @@
+/* Контейнер для галереї */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Простір між блоками */
+    gap: 20px; /* Відстань між блоками */
+    padding: 20px; /* Відступ від країв сторінки */
+}
+
+/* Альбом */
+.album {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Забезпечує обрізання зайвого */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33.33% - 20px); /* 3 блоки в ряд для великих екранів */
+}
+
+.album:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Фото альбому */
+.album img {
+    width: 100%; /* Фото займає всю ширину блочка */
+    height: auto; /* Пропорційна висота */
+    display: block; /* Забезпечує відсутність пробілів */
+}
+
+/* Контент альбому */
+.album-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.album-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+
+.album-year {
+    font-size: 14px;
+    color: #888;
+    margin: 0 0 8px;
+}
+
+.album-description {
+    font-size: 14px;
+    margin: 0 0 16px;
+}
+
+
+
+
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+    .album {
+        width: calc(50% - 20px); /* 2 блоки в ряд для середніх екранів */
+    }
+}
+
+@media (max-width: 768px) {
+    .album {
+        width: calc(100% - 20px); /* 1 блок на ряд для малих екранів */
+    }
+}

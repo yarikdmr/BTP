@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="albom.css">
+    <link rel="stylesheet" href="theori.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <title>Bike Trip Planner</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <!-- нове меню бургер -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">BIKE TRIP PLANNER</a>
+  
+    <!-- Кнопка (бургер), видна только на мобильных -->
+    <div class="menu-toggle" id="mobile-menu">
+      <!-- Можно использовать любой символ/иконку -->
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+    </div>
+  
+    <!-- Ссылки -->
+    <div class="nav-links" id="nav-links">
+      <a href="map.html">Trasy</a>
+      <a href="theori.html">Artykuły</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="contact.html">O mnie</a>
+    </div>
+  </nav>
+  <script>
+    const burger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+  
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
+    <a href="gallery.html" class="back-button">
+        <img src="images/left-normal.png" alt="Back"> 
+    </a>
+
+
+    <div class="theori-head-list">
+        <h1 id="album-title">Назва альбому</h1>
+        <p id="album-description">Опис альбому</p>
+    </div>
+        <div class="gallery-container"></div>
+        <p id="loading-text" style="display: none;">Ładowanie...</p>
+        <button id="load-more-button">Załaduj więcej zdjęć</button>
+    
+
+    
+
+
+
+
+      <footer class="page-footer">
+      <p>
+        Made by <a href="contact.html" class="accent">Yaroslav Domaretskyi</a><br>
+        Student of <a href="https://pollub.pl/" target="_blank" class="accent">Lublin University of Technology</a><br>
+        [<span class="accent">2025</span>]
+      </p>
+    </footer>
+  
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+      <script src="albom.js"></script>
+      <script src="script.js"></script>
+      
+    
+    
+</body>
+</html>

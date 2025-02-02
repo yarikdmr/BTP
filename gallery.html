@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Trip Planner</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theori.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+</head>
+<body>
+  <!-- нове меню бургер -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">BIKE TRIP PLANNER</a>
+  
+    <!-- Кнопка (бургер), видна только на мобильных -->
+    <div class="menu-toggle" id="mobile-menu">
+      <!-- Можно использовать любой символ/иконку -->
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+    </div>
+  
+    <!-- Ссылки -->
+    <div class="nav-links" id="nav-links">
+      <a href="map.html">Trasy</a>
+      <a href="theori.html">Artykuły</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="contact.html">O mnie</a>
+    </div>
+  </nav>
+  <script>
+    const burger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+  
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
+
+
+<h1 class="theori-head-list">Lista albumów</h1>
+
+<div class="search-container">
+    <span class="search-icon">
+      <!-- Инлайн SVG лупы -->
+      <svg width="18" height="18" viewBox="0 0 24 24">
+        <path d="M10 2a8 8 0 015.916 13.42l4.339 4.338-1.414 1.415-4.338-4.339A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
+      </svg>
+    </span>
+    <input 
+      type="text" 
+      id="search-input" 
+      placeholder="Szukaj" 
+      autocomplete="off"
+    />
+    <ul id="suggestions" class="dropdown"></ul>
+  </div>
+
+
+
+  <div class="article-section" id="articles-container"></div>
+
+
+
+  <footer class="page-footer">
+    <p>
+      Made by <a href="contact.html" class="accent">Yaroslav Domaretskyi</a><br>
+      Student of <a href="https://pollub.pl/" target="_blank" class="accent">Lublin University of Technology</a><br>
+      [<span class="accent">2025</span>]
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>

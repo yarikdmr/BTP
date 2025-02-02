@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theori.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Bike Trip Planner</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+ 
+</head>
+<body>
+  
+  <!-- нове меню бургер -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">BIKE TRIP PLANNER</a>
+  
+    <!-- Кнопка (бургер), видна только на мобильных -->
+    <div class="menu-toggle" id="mobile-menu">
+      <!-- Можно использовать любой символ/иконку -->
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+    </div>
+  
+    <!-- Ссылки -->
+    <div class="nav-links" id="nav-links">
+      <a href="map.html">Trasy</a>
+      <a href="theori.html">Artykuły</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="contact.html">O mnie</a>
+    </div>
+  </nav>
+  <script>
+    const burger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+  
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+  
+
+  <!-- Header Section with Image Slider -->
+  <header class="slider">
+    <div class="slide active">
+      <img src="images/photo1.jpg" alt="Scenic mountain view">
+    </div>
+    <div class="slide">
+      <img src="images/photo2.jpg" alt="Cyclists on the road">
+    </div>
+    <div class="slide">
+      <img src="images/photo3.jpg" alt="Bike on a trail">
+    </div>
+  </header>
+
+
+  <!-- Text Section -->
+<section class="text-section">
+  <div class="text-container">
+    <h1 class="text-title">Planer podróży rowerowych</h1>
+    <p class="text-description">
+      Zapraszamy do świata rowerowych przygód! Na naszej stronie znajdziesz praktyczne porady, 
+inspirujące artykuły oraz galerie pełne niezapomnianych chwil z podróży. 
+Wszystko, czego potrzebujesz, aby rozpocząć swoją pierwszą rowerową wyprawę lub 
+zaplanować kolejne.
+    </p>
+  </div>
+</section>
+
+
+<section class="red-section">
+  <div class="red-container">
+    <div class="article-section" id="random-articles-container"></div>
+
+    
+  </div>
+</section>
+
+
+<section class="recommendation-section">
+  <h1 class="text-title-mini">Rekomendacje dotyczące planowania trasy rowerowej</h1>
+  <div class="line_90"></div>
+  <div class="text-description-mini">
+    Planowanie trasy rowerowej to klucz do udanej wyprawy. Ważne jest, aby dostosować dystans do swoich możliwości, wybrać odpowiedni szlak i dobrze się przygotować. Na naszej stronie znajdziesz praktyczne porady, które pomogą Ci zaplanować idealną trasę.
+  </div>
+  <a href="article.html?id=1" class="btn-red">Dowiedz się więcej</a>
+</section>
+
+
+<div class="split-block">
+  <div class="split-block-left">
+    <img src="images/photo1.jpg" alt="Galeria">
+  </div>
+  <div class="split-block-right">
+    <h2 class="split-title">Galeria</h2>
+    <a href="gallery.html" class="btn-gallery">Zobacz</a>
+  </div>
+</div>
+
+<section class="recommendation-section">
+  <h1 class="text-title-mini">Gotowe trasy z oceną i plikiem GPX</h1>
+  <div class="line_90"></div>
+  <div class="text-description-mini">
+    Na tej stronie znajdziesz gotowe trasy na swoje wyjazdy i rowerowe podróże.
+Wszystkie trasy zostały sprawdzone osobiście, posiadają ocenę trudności oraz możliwość pobrania pliku GPX, który możesz wykorzystać do nawigacji na różnych urządzeniach.
+  </div>
+  <a href="map.html" class="btn-red">Dowiedz się więcej</a>
+</section>
+
+  <footer class="page-footer">
+    <p>
+      Made by <a href="contact.html" class="accent">Yaroslav Domaretskyi</a><br>
+      Student of <a href="https://pollub.pl/" target="_blank" class="accent">Lublin University of Technology</a><br>
+      [<span class="accent">2025</span>]
+    </p>
+  </footer>
+
+
+  <script src="script.js"></script>
+  <script src="randomArticles.js"></script>
+
+</body>
+</html>

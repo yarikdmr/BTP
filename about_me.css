@@ -1,0 +1,345 @@
+body {
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar_contact {
+    font-family: 'Poppins', sans-serif; /* Вказуємо основний шрифт */
+}
+
+.main-container {
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+
+}
+
+.container_me {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    gap: 2rem;
+}
+
+.photo_me {
+    flex-shrink: 0;
+    margin-right: 20px;
+    
+}
+
+.photo_me img {
+    max-height: 300px;
+    width: auto;
+    box-shadow: 10px 10px 0px 0px #D73636;
+    border-radius: 0; /* Прибрано закруглення */
+    border: 1px solid #000
+    
+    
+    
+}
+
+.content_me {
+    flex-grow: 1;
+}
+
+.about_me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.about_me::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #D73636;
+    margin-right: 10px;
+}
+
+.about_me h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.description_me {
+    font-size: 14px;
+    background-color: #D73636;
+    color: white;
+    padding: 15px;
+    
+    line-height: 1.6;
+    margin-left: 0;
+}
+
+.under-description {
+    width: 65vw; /* Замість відсотків використовується ширина екрану */
+    margin-top: 20px;
+     line-height: 1.6;
+     font-size: 14px;
+ }
+
+
+
+ .under-blocks {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 20px;
+    gap: 25px; /* Відступ між блоками */
+}
+
+
+.under-left {
+    width: 60%;
+    border: 2px dashed #000; /* Пунктирна лінія */
+    padding: 50px 40px;
+    box-sizing: border-box;
+}
+
+.under-left ul {
+    display: block;
+    margin-left: 2rem;
+    list-style: square;
+    padding: 0;
+}
+
+.under-left__social {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+
+}
+
+.under-left ul li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    &::marker {
+        color: #D73636;
+    }
+}
+
+.under-left ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.under-left ul li a:hover {
+    color: #D73636;
+    text-decoration: underline;
+}
+
+
+.under-red {
+    
+    width: 40%;
+    background-color: #D73636; /* Червоний блок */
+    color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    
+}
+
+.under-red a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.under-red a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+
+
+
+.photo-banner {
+    padding-top: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 450px;
+    margin-top: 1rem;
+    z-index: 2; /* Розташовує фото над футером */
+    overscroll-behavior-y: scroll;
+}
+
+.photo-bike {
+    position: absolute;
+    right: -9rem;
+    bottom: 75%;
+    display: block;
+
+    z-index: 2; /* Забезпечує виступ поверх футера */
+    width: auto;
+
+    height: 600px
+}
+
+.footer-photo-banner {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Стили футера */
+.page-footer-about {
+    position: relative;
+    margin-top: 50px; /* Додаємо відступ між футером і вмістом вище */
+    background-color: #000;  /* Чёрный фон */
+    color: #fff;             /* Белый текст */
+    padding: 2%;
+    text-align: left;        
+    font-family: monospace;  /* Аналогичный стиль шрифта, если хотите */
+    font-size: 16px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень сверху */
+    aspect-ratio: 5 / 1;  
+    z-index: 1; /* Розташування під фото */
+    &.page-footer-about_about {
+        width: 100%;
+        p {
+            padding: .5rem 1.25rem;
+        }
+    }
+  }
+  
+  .page-footer-about p {
+    margin-top: 40px; /* Відступ тексту від верхньої границі */
+  }
+  
+  
+  /* Класс для красного выделения */
+  .page-footer-about .accent-about {
+    color: #D73636; /* Или используйте pure red (#ff0000) */
+    transition: 0.5s;
+    text-decoration: none; 
+  }
+  
+  .page-footer-about .accent-about:hover {
+    text-decoration: underline;  /* Добавляем подчеркивание при наведении */
+    background: #dedede;
+    box-shadow: 0 0 10px #ffffffcc, 0 0 40px #ffffffa9, 0 0 80px #ffffff68;
+  }
+
+  /* Загальний медіа-запит для мобільних пристроїв */
+@media screen and (max-width: 768px) {
+    /* Основний контейнер */
+    .main-container {
+      padding: 5%;
+    }
+  
+    /* Контейнер з фото та описом */
+    .container_me {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+  
+    .photo_me img {
+      max-height: 200px;
+      width: auto;
+    }
+  
+    .about_me {
+      font-size: 2rem;
+    }
+  
+    .description_me {
+      font-size: 16px;
+      padding: 10px;
+      text-align: justify;
+    }
+  
+    /* Блок з текстом під описом */
+    .under-description {
+      width: 100%;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  
+    /* Блоки під описом */
+    .under-blocks {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .under-left {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .under-red {
+      width: 100%;
+      font-size: 1.2em;
+      padding: 15px;
+    }
+  
+    /* Фото банер */
+    .photo-banner {
+      height: 300px;
+      margin-top: 0; /* Прибираємо зайвий простір зверху */
+    }
+  
+    .photo-bike {
+      display: none; /* Приховуємо фото велосипеда на мобільних пристроях */
+    }
+  
+    /* Футер */
+    .page-footer-about {
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .page-footer-about p {
+      margin-top: 20px;
+    }
+  
+    .page-footer-about .accent-about {
+      font-size: 14px;
+    }
+  }
+  
+  /* Додатковий медіа-запит для дуже малих екранів */
+  @media screen and (max-width: 480px) {
+    .about_me {
+      font-size: 1.5rem;
+    }
+  
+    .description_me {
+      font-size: 14px;
+    }
+  
+    .under-description {
+      font-size: 12px;
+    }
+  
+    .under-left ul li {
+      font-size: 1em;
+    }
+  
+    .under-red {
+      font-size: 1em;
+    }
+  
+    .photo-bike {
+      display: none; /* Приховуємо фото велосипеда на маленьких екранах */
+    }
+  }
+  

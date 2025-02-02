@@ -1,0 +1,614 @@
+body {
+  font-family: 'Poppins', sans-serif; /* Вказуємо основний шрифт */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Базовый стиль навбара */
+.navbar {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #f8f9fa;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+/* Уменьшаем отступы при «сжатии» (если используете скрипт, 
+   который добавляет .shrink при прокрутке) */
+.navbar.shrink {
+  padding: 8px 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+}
+
+/* Лого */
+.navbar .logo {
+  position: absolute;
+  font-size: 2em;
+  font-weight: bold;
+  color: #050510;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.navbar .logo:hover {
+  color: #D73636;
+  transform: scale(1.05);
+}
+
+/* При .shrink уменьшаем лого */
+.navbar.shrink .logo {
+  font-size: 1.2em;
+}
+
+/* Навигационные ссылки в десктопной версии */
+.nav-links {
+  padding-left: 20px;
+  display: flex;
+  margin: 0 auto;
+  gap: 30px; /* Отступы между ссылками */
+  
+}
+
+.nav-links a {
+  color: #050510;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-links a:hover {
+  color: #D73636;
+  transform: scale(1.05);
+}
+
+/* Бургер-меню (кнопка). 
+   По умолчанию скрываем на больших экранах — покажем на мобильных */
+.menu-toggle {
+  display: none; 
+  cursor: pointer;
+}
+.menu-toggle .burger-icon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #050510;
+  transition: background-color 0.3s;
+}
+
+/* ---- Адаптивная часть ---- */
+@media (max-width: 768px) {
+  /* Делаем лого поменьше при очень узких экранах, если нужно */
+  .navbar .logo {
+    font-size: 1.5em;
+  }
+
+  /* Показываем бургер-иконку */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Скрываем ссылки, пока не откроется меню */
+  .nav-links {
+    display: none; /* По умолчанию скрыто */
+    position: absolute;
+    top: 60px;        /* Ниже хедера (с учётом высоты .navbar) */
+    left: 0;
+    width: 100%;      /* Полная ширина */
+    background-color: #f8f9fa;
+    flex-direction: column;
+    align-items: center; 
+    gap: 0;           /* Сбрасываем gap, сделаем отступы через padding */
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  /* Когда активируем меню (JS будет добавлять класс open),
+     тогда показываем блок ссылок */
+  .nav-links.open {
+    display: flex;
+  }
+}
+@media (max-width: 998px) {
+  .nav-links {
+    margin: unset;
+  }
+  .navbar .logo {
+    position: relative;
+  }
+}
+
+
+/* Slider Section */
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 65vh; /* Збільшена висота для слайдера */
+  width: 100%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  
+}
+
+
+.slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slider .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Зберігає пропорції фото */
+}
+
+.slider .slide.active {
+  opacity: 1;
+}
+
+
+/* Текстова секція */
+.text-section {
+  position: relative;
+  width: 85%; /* ширина блоку (відступи з боків) */
+  margin: -2% auto 0 auto; /* виступ на 5% */
+  background-color: white;
+  border: 1px solid black; /* чорна рамка */
+  box-shadow: 
+  10px 10px 0 0 gray, /* Тінь */
+  10px 10px 0 0.6px black; /* Рамка для тіні */
+  
+}
+
+
+.text-container {
+  padding: 20px 40px 20px; /* внутрішні відступи для тексту */
+  text-align: center;
+}
+
+.text-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.text-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 100;
+}
+
+
+/* Секція для рекомендацій */
+
+.recommendation-section {
+  text-align: center; /* Центрування тексту */
+  padding: 40px 20px; /* Збільшено верхній та нижній відступи */
+  margin-top: 50px; /* Відступ від попереднього вмісту сайту */
+}
+
+.text-title-mini {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+.text-description-mini {
+  width: 60%; /* Ширина блоку */
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 10px auto; /* Центрування блоку по горизонталі з додатковим зовнішнім відступом зверху */
+  font-weight: 100;
+  text-align: center; /* Центрування тексту */
+  padding: 20px; /* Внутрішній відступ для збільшення відстані до країв */
+  box-sizing: border-box; /* Щоб внутрішні відступи враховувалися у ширині блоку */
+}
+
+
+.line_90 {
+  width: 88%; /* Ширина лінії */
+  height: 1px; /* Товщина лінії */
+  background-color: #000000; /* Червоний колір */
+  margin: 10px auto; /* Центрування лінії */
+}
+
+/* Кнопка */
+.btn-red {
+  letter-spacing: 1px;
+  margin-top: 15px;
+  display: inline-block;
+  background-color: #D73636; /* Червоний фон */
+  color: white; /* Білий текст */
+  font-weight: 600; /* Жирний текст */
+  font-size: 1rem; /* Розмір тексту */
+  text-decoration: none; /* Без підкреслення */
+  padding: 10px 20px; /* Внутрішні відступи */
+  border-radius: 0px; /* Закруглені кути */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Плавний перехід */
+  &-split {
+    margin-top: 0;
+  }
+}
+
+.btn-red:hover {
+  
+  box-shadow: 0 0 0 1px black, 6px 6px 4px rgba(0, 0, 0, 0.7); /* Більша тінь при наведенні */
+  transform: translateY(+3px); /* Легке підняття при наведенні */
+  transform: translateX(+3px)
+}
+
+
+/* Червона секція */
+.red-section {
+  background-color: #D93535; /* Червоний фон */
+  width: 100%; /* На всю ширину екрану */
+  padding: px 0; /* Відступи зверху і знизу */
+  margin-top: 70px ; /* Відступ від попереднього блоку */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.red-container {
+  display: flex; /* Використовуємо flexbox */
+  justify-content: space-around; /* Вирівнювання блоків із рівними відступами */
+  flex-wrap: wrap; /* Автоматичний перенос блоків, якщо ширина екрана недостатня */
+  max-width: 1200px; /* Обмеження ширини контейнера */
+  margin: 0 auto; /* Вирівнювання контейнера по центру */
+  gap: 20px; /* Відступ між блоками */
+  padding: 0 20px; /* Відступи з боків усередині контейнера */
+}
+
+.red-box {
+  background-color: white; /* Білий фон для блоків */
+  color: black; /* Чорний текст */
+  flex: 1 1 calc(25% - 20px); /* Кожен блок займає 25% ширини мінус відступ */
+  max-width: calc(25% - 20px); /* Максимальна ширина 25% */
+  text-align: center; /* Текст по центру */
+  padding: 20px; /* Відступи всередині блоків */
+  border: 1px solid black; /* Чорна рамка навколо блоків */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Тінь для блоків */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анімація */
+}
+
+.red-box:hover {
+  transform: scale(1.05); /* Збільшення при наведенні */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); /* Більша тінь при наведенні */
+}
+
+
+/* Загальний стиль блоку */
+.split-block {
+  margin: 90px auto; /* 30px зверху і знизу, auto — по центру горизонтально */
+  /* або: */
+  margin-bottom: 80px; /* Відступ знизу */
+  width: 60%;
+  display: flex; /* Дві області поруч */
+  border: 2px solid black; /* Чорна рамка */
+  background-color: white; /* Білий фон */
+  height: 300px; /* Висота блоку */
+  max-width: 1000px; /* Максимальна ширина */
+  
+  overflow: hidden; /* Обрізає вміст, що виходить за межі блоку */
+  box-shadow: 
+  10px 10px 0 0 gray, /* Тінь */
+  10px 10px 0 0.6px black; /* Рамка для тіні */
+}
+
+/* Ліва область (з фото) */
+.split-block-left {
+  flex: 1.2; /* Займає 50% блоку */
+  overflow: hidden; /* Обрізає зображення, що виходить за межі блоку */
+  position: relative; /* Для позиціювання зображення */
+}
+
+.split-block-left img {
+  width: 100%; /* Фото заповнює всю ширину області */
+  height: 100%; /* Фото заповнює всю висоту області */
+  object-fit: cover; /* Обрізає фото зі всіх сторін, зберігаючи пропорції */
+  object-position: center; /* Центрує обрізання фото */
+  position: absolute; /* Забезпечує точне позиціювання всередині області */
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+/* Права область (з текстом і кнопкою) */
+.split-block-right {
+  flex: 1; /* Займає 50% блоку */
+  display: flex; /* Використовує Flexbox для вирівнювання */
+  flex-direction: column; /* Елементи розташовані вертикально */
+  justify-content: space-evenly; /* Простір між заголовком і кнопкою */
+  align-items: center; /* Горизонтальне вирівнювання по центру */
+  padding: 10px; /* Внутрішній відступ */
+  position: relative;
+}
+
+/* Заголовок */
+.split-title {
+  font-size: 1.5rem; /* Розмір тексту */
+  font-weight: 600; /* Жирний текст */
+  text-align: center; /* Вирівнювання по центру */
+  margin: 0;
+}
+
+
+.btn-gallery {
+  letter-spacing: 1px;
+  margin-top: 15px;
+  display: inline-block;
+  background-color: #525252; /* Червоний фон */
+  color: white; /* Білий текст */
+  font-weight: 600; /* Жирний текст */
+  font-size: 1rem; /* Розмір тексту */
+  text-decoration: none; /* Без підкреслення */
+  padding: 10px 20px; /* Внутрішні відступи */
+  border-radius: 0px; /* Закруглені кути */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Плавний перехід */
+  &-split {
+    margin-top: 0;
+  }
+}
+
+.btn-gallery:hover {
+  
+  box-shadow: 0 0 0 1px black, 6px 6px 4px rgba(0, 0, 0, 0.7); /* Більша тінь при наведенні */
+  transform: translateY(+3px); /* Легке підняття при наведенні */
+  transform: translateX(+3px)
+}
+
+/* --- Адаптив для телефонів --- */
+@media (max-width: 768px) {
+  .split-block {
+    flex-direction: column; /* Вертикальне розташування елементів */
+    width: 90%; /* Блок займає 90% ширини екрану */
+    height: auto; /* Автоматична висота */
+  }
+
+  .split-block-left {
+    flex: none; /* Фото займає всю ширину */
+    height: 200px; /* Фіксована висота для фото */
+  }
+
+  .split-block-right {
+    flex: none; /* Текст займає всю ширину */
+    padding: 20px 10px; /* Відступи навколо тексту */
+    text-align: center; /* Центруємо текст */
+  }
+
+  .split-title {
+    margin-bottom: 20px; /* Відступ під заголовком */
+    font-size: 1.3rem; /* Менший розмір тексту */
+  }
+
+  .btn-gallery {
+    margin-top: 10px; /* Відступ над кнопкою */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* галерея*/
+
+.tz-gallery {
+  padding: 40px;
+}
+
+.tz-gallery .thumbnail {
+  padding: 0;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  transition: 0.15s ease-in-out;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.tz-gallery .thumbnail:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.baguetteBox-button {
+  background-color: transparent !important;
+}
+
+
+.carousel-inner>.item>a>img,
+.carousel-inner>.item>img,
+.img-responsive,
+.thumbnail a>img,
+.thumbnail>img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* ваня */
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 17px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 5px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+
+
+/* Стили футера */
+.page-footer {
+  margin-top: 50px; /* Додаємо відступ між футером і вмістом вище */
+  background-color: #000;  /* Чёрный фон */
+  color: #fff;             /* Белый текст */
+  padding: 20px;
+  /* Если нужно отцентрировать текст, вместо left поставьте center */
+  text-align: left;        
+  font-family: monospace;  /* Аналогичный стиль шрифта, если хотите */
+  font-size: 16px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень сверху */
+  aspect-ratio: 5 / 1;  
+  
+}
+
+.page-footer p {
+  margin-top: 40px; /* Відступ тексту від верхньої границі */
+}
+
+
+/* Класс для красного выделения */
+.page-footer .accent {
+  color: #D73636; /* Или используйте pure red (#ff0000) */
+  text-decoration: none; 
+}
+
+.page-footer .accent:hover {
+  text-decoration: underline;  /* Добавляем подчеркивание при наведении */
+}
+
+
+.red-back-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #d93535;
+  aspect-ratio: 5 / 1.3; /* Співвідношення сторін 5:1 */
+  width: 11%; /* Регулює ширину кнопки */
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Вирівнюємо стрілку по горизонталі */
+  padding-right: 20px; /* Відступ стрілки від правого краю */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Тінь у статичному стані */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анімація */
+}
+.red-back-button img {
+  width: 20px;
+  height: 20px;
+  margin-left: auto; /* Відцентровує стрілку всередині кнопки */
+}
+.red-back-button:hover {
+  transform: translate(15%, -50%); /* Рух вправо на 15% */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Посилена тінь при наведенні */
+}
+/* Медіа-запит для мобільних пристроїв */
+@media (max-width: 768px) {
+  .red-back-button {
+    aspect-ratio: 3 / 2;
+    padding-right: 10px; /* Зменшуємо відступ для компактності */
+  }
+  .red-back-button img {
+    width: 15px; /* Зменшуємо розмір стрілки */
+    height: 15px;
+  }
+}
+/* кнопка назад */
+
+.back-button {
+  position: fixed;
+  left: 0px;
+  top: 160px;
+  transform: translateY(-50%);
+  background-color: #d93535;
+  aspect-ratio: 5 / 1.3; /* Співвідношення сторін 5:1 */
+  border-radius: 0px;
+  width: 11%; /* Регулює ширину кнопки */
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Вирівнюємо стрілку по горизонталі */
+  padding-right: 20px; /* Відступ стрілки від правого краю */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Тінь у статичному стані */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анімація */
+  z-index: 100;
+}
+
+.back-button img {
+  width: 20px;
+  height: 20px;
+  margin-left: auto; /* Відцентровує стрілку всередині кнопки */
+}
+
+.back-button:hover {
+  transform: translate(15%, -50%); /* Рух вправо на 15% */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Посилена тінь при наведенні */
+}
+@media (max-width: 768px) {
+  .back-button {
+    position: absolute;
+    aspect-ratio: 3 / 2;
+    top: 12%;
+    padding-right: 10px; /* Зменшуємо відступ для компактності */
+  }
+  .back-button img {
+    width: 15px; /* Зменшуємо розмір стрілки */
+    height: 15px;
+  }
+}
+
+.theori-head-list {
+  margin: 30px auto;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 3px;
+}
+.theori-head-list::after {
+  content: '';
+  display: block;
+  margin: 20px auto;
+  width: 70vw;
+  height: 1px;
+  background-color: black;
+
+}

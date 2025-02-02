@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Bike Trip Planner</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+<body>
+
+  <!-- нове меню бургер -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">BIKE TRIP PLANNER</a>
+  
+    <!-- Кнопка (бургер), видна только на мобильных -->
+    <div class="menu-toggle" id="mobile-menu">
+      <!-- Можно использовать любой символ/иконку -->
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+    </div>
+  
+    <!-- Ссылки -->
+    <div class="nav-links" id="nav-links">
+      <a href="map.html">Trasy</a>
+      <a href="theori.html">Artykuły</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="contact.html">O mnie</a>
+    </div>
+  </nav>
+  <script>
+    const burger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+  
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
+  <div class="header">
+    <a href="index.html" class="red-back-button">
+      <img src="images/left-normal.png" alt="Back"> 
+  </a>
+    <h1>Trasy</h1>
+  </div>
+
+  <div class="container">
+    <div class="addi-text">
+      <p>Na tej stronie znajdziesz różnorodne trasy rowerowe wraz z dołączonymi zdjęciami. Wszystkie trasy zostały osobiście przetestowane, a każda z nich zawiera krótki opis, ocenę trudności oraz subiektywną opinię.
+
+        Każdą trasę możesz pobrać w formacie GPX, aby odtworzyć ją na różnych platformach lub bezpośrednio na swoim komputerze rowerowym.
+        
+        Dodatkowo, klikając przycisk "View on Strava", możesz szczegółowo przeanalizować trasę, sprawdzić jej profil wysokościowy oraz dodać ją do swojej listy ulubionych tras.
+        
+        Gotowy na kolejną rowerową przygodę? 🚴‍♂️✨</p>
+    </div>
+    
+    </div>
+  
+
+
+    
+    <div class="route-container" id="routes"></div>
+    
+     <!-- === МОДАЛЬНЕ ВІКНО === -->
+    <div id="difficultyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Poziomy trudności tras rowerowych</h2>
+        <table>
+            <tr><th>Poziom</th><th>Opis</th></tr>
+            <tr><td>1-2</td><td>Bardzo łatwe trasy, niemal płaska droga, minimalne podjazdy.</td></tr>
+            <tr><td>3-4</td><td>Łatwe trasy, niewielkie podjazdy, dobra nawierzchnia.</td></tr>
+            <tr><td>5-6</td><td>Średnia trudność, mieszany teren, odcinki żwirowe.</td></tr>
+            <tr><td>7-8</td><td>Trudne trasy, górzyste tereny, długie podjazdy.</td></tr>
+            <tr><td>9-10</td><td>Bardzo trudne trasy, techniczne zjazdy, wysokie przełęcze.</td></tr>
+        </table>
+    </div>
+</div>
+
+
+    <footer class="page-footer">
+      <p>
+        Made by <a href="contact.html" class="accent">Yaroslav Domaretskyi</a><br>
+        Student of <a href="https://pollub.pl/" target="_blank" class="accent">Lublin University of Technology</a><br>
+        [<span class="accent">2025</span>]
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</body>
+
+</html>
