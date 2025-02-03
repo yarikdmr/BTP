@@ -51,11 +51,20 @@ body {
 
 .route-container {
     padding: 0 10%;
-    width: 80%;
+    max-width: 90%; /* Встановлюємо максимальну ширину */
+    margin: 0 auto; /* Центруємо блок */
     display: flex;
     flex-direction: column;
     gap: 0px;
 }
+/* Оптимізація для мобільних пристроїв */
+@media (max-width: 768px) {
+  .route-container {
+      padding: 0 5%; /* Рівномірний відступ з обох боків */
+      max-width: 100%; /* Робимо ширину 100%, щоб уникнути зміщення */
+  }
+}
+
 .route-block {
   transform: scale(0.8);
     display: flex;
@@ -300,4 +309,37 @@ body {
 .right-button a:hover {
   background: #e64a19; /* Трохи темніший відтінок помаранчевого */
 }
+
+@media (max-width: 768px) {
+  /* Вирівнюємо заголовок, складність, відстань та опис */
+  .route-title,
+  .route-difficulty,
+  .route-distance,
+  .route-description {
+      padding: 8px 10px; /* Відступи зліва та справа */
+      text-align: center; /* Центруємо текст */
+  }
+
+  /* Центруємо блоки "Складність" і "Відстань" */
+  .route-difficulty,
+  .route-distance {
+      display: inline-block;
+      width: auto; /* Робимо ширину автоматичною */
+      padding: 8px 15px;
+      margin: 5px auto; /* Центруємо */
+  }
+
+  /* Центруємо декоративну лінію */
+  .route-line {
+      width: 70%;
+      margin: 10px auto;
+  }
+
+  /* Додаємо рівномірні відступи для лівого блоку */
+  .route-left {
+      padding: 20px 10px;
+      text-align: center; /* Центруємо вміст */
+  }
+}
+
 
