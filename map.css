@@ -71,6 +71,17 @@ body {
     background: #f9f9f9;
     position: relative; /* Робимо контейнер позиційно відносним */
 }
+
+.route-distance {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #cccccc8c;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  align-self: center;
+}
 .button-container {
   position: absolute;
   bottom: 40px; /* Відступ від низу */
@@ -87,7 +98,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: 100%; /* Забезпечує правильне відображення */
+  flex-direction: column; /* Елементи в колонку (для адаптивності) */
 }
+
+/* Адаптивне переміщення кнопки під Strava на мобільних пристроях */
+@media (max-width: 768px) {
+  .route-right {
+      flex-direction: column; /* Робимо кнопки і Strava в колонку */
+  }
+
+  .right-button {
+      position: static; /* Відключаємо абсолютне позиціонування */
+      margin-top: 15px; /* Додаємо відступ між Strava і кнопкою */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }
+
+  .right-button a {
+      width: 80%; /* Розтягуємо кнопку по ширині */
+      text-align: center;
+  }
+}
+
 .route-title {
     font-size: 20px;
     font-weight: bold;
@@ -134,6 +169,7 @@ body {
 }
 
 .strava-container {
+  
   width: 100%;
   height: 100%;
   border-radius: 0 px;
@@ -143,6 +179,15 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  transform: translateY(-25%); /* Зсуваємо контент вгору */
+    clip-path: inset(35% 0% 10% 0%); /* Обрізаємо 30% зверху, 10% знизу */
+}
+
+@media (max-width: 768px) {
+  .strava-container {
+      transform: translateY(-25%); /* Зсуваємо контент вгору */
+      clip-path: inset(45% 0% 0% 0%); /* Обрізаємо верх 35%, низ 10% */
+  }
 }
 
 .strava-container > div {
@@ -245,3 +290,14 @@ body {
     text-align: center;
   }
 }
+
+/* Стилі для кнопки в правій частині */
+.right-button a {
+  background: #ff5722; /* Змінюємо колір на Strava-стильний помаранчевий */
+}
+
+/* Ефект при наведенні */
+.right-button a:hover {
+  background: #e64a19; /* Трохи темніший відтінок помаранчевого */
+}
+

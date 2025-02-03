@@ -15,14 +15,18 @@ async function loadRoutes() {
                     <div class="route-title">${route.name}</div>
                     <div class="route-line"></div>
                     <div class="route-difficulty" onclick="openModal()">trudność trasy: ${route.difficulty}/10</div>
+                    <div class="route-distance">Odległość: ${route.distance} km</div>
                     <p class="route-description">${route.description}</p>
                     <div class="button-container">
-                    <a href="${route.file_url}" download class="btn-gallery">Pobierz GPX</a>
+                        <a href="${route.file_url}" download class="btn-gallery">Pobierz GPX</a>
                     </div>
                 </div>
                 <div class="route-right">
                     <div class="strava-container">
                         ${route.iframe_code}
+                    </div>
+                    <div class="button-container right-button">
+                        <a href="${route.right_button_url}" target="_blank" class="btn-gallery">Zobaczyć szczegóły</a>
                     </div>
                 </div>
             `;
@@ -36,6 +40,8 @@ async function loadRoutes() {
         console.error('Помилка завантаження маршрутів:', error);
     }
 }
+
+loadRoutes();
 
 // фіксимо проблему з тим що пропадають кнопки для блоку страви
 function reloadStravaEmbeds() {

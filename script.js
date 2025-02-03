@@ -31,12 +31,12 @@ const handleScroll = () => {
 
   isAnimating = true;
   requestAnimationFrame(() => {
-    const scrollPosition = window.scrollY;
+    const scrollPosition = Math.round(window.scrollY); // Округлюємо, щоб уникнути коливань
 
-    if (scrollPosition > 300 && !isShrunk) {
+    if (scrollPosition > 320 && !isShrunk) {
       navbar.classList.add('shrink');
       isShrunk = true;
-    } else if (scrollPosition <= 300 && isShrunk) {
+    } else if (scrollPosition < 280 && isShrunk) {
       navbar.classList.remove('shrink');
       isShrunk = false;
     }

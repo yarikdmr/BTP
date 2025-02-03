@@ -2,40 +2,50 @@
     {
         "name": "Lublin – Kazimierz Dolny",
         "difficulty": 6,
+        "distance": 102,
         "description": "Łatwa trasa przez zalesione tereny, idealna na relaksującą przejażdżkę. Świetny wybór, jeśli chcesz przejechać 100 km – doskonały trening i mała podróż. Dobra droga prowadząca przez las, a powrót inną trasą sprawia, że przejazd jest jeszcze ciekawszy.",
         "file_url": "gpx/do_zamku.gpx",
+        "right_button_url": "https://www.strava.com/activities/9545536603",
         "iframe_code": "<div class='strava-embed-placeholder' data-embed-type='activity' data-embed-id='9545536603' data-style='standard' data-from-embed='false'></div><script src='https://strava-embeds.com/embed.js'></script>"
     },
     
     {
         "name": "Czeskie Góry",
         "difficulty": 8,
+        "distance": 124,
         "description": "Trasa przez jedne z najwyższych szczytów Czech – wyzwanie dla wytrwałych rowerzystów, gotowych zdobywać góry, choć bez ekstremalnych warunków. To malowniczy szlak biegnący wzdłuż czesko-polskiej granicy, prowadzący przez gęste lasy i przepiękne parki narodowe. Idealna okazja, by połączyć sportową przygodę z bliskością natury.",
         "file_url": "gpx/cz_gory.gpx",
+        "right_button_url": "https://www.strava.com/activities/11317808108",
         "iframe_code": "<div class='strava-embed-placeholder' data-embed-type='activity' data-embed-id='11317808108' data-style='standard' data-from-embed='false'></div><script src='https://strava-embeds.com/embed.js'></script>"
     },
     
     {
       "name": "Liechtenstein i Szwajcarskie Góry",
     "difficulty": 7,
+    "distance": 117,
     "description": "Trasa prowadząca przez całe księstwo Liechtenstein, a następnie przez urokliwe, malownicze miasteczka Szwajcarii. Alpejskie szczyty zachwycają swoim majestatem, a choć strome podjazdy stanowią wyzwanie, widoki wynagradzają każdy wysiłek. To niezapomniana podróż przez serce Alp, gdzie natura i górska sceneria tworzą prawdziwie bajkowy krajobraz.",
     "file_url": "gpx/lie_szw.gpx",
+    "right_button_url": "https://www.strava.com/activities/9668620378",
     "iframe_code": "<div class='strava-embed-placeholder' data-embed-type='activity' data-embed-id='9668620378' data-style='standard' data-from-embed='false'></div><script src='https://strava-embeds.com/embed.js'></script>"
     },
 
     {
       "name": "Wenecja – Vicenza – Werona",
     "difficulty": 5,
+    "distance": 108,
     "description": "To wspaniała trasa, która pozwala odwiedzić trzy wyjątkowe miasta w jednej podróży. Teren jest płaski, więc jedynym wyzwaniem jest dystans do pokonania. To idealna okazja, aby porównać i cieszyć się trzema różnymi obliczami północnych Włoch – romantyczną Wenecją, elegancką Vicenzą i malowniczą Weroną.",
     "file_url": "gpx/wen_wer.gpx",
+    "right_button_url": "https://www.strava.com/activities/7557291169",
     "iframe_code": "<div class='strava-embed-placeholder' data-embed-type='activity' data-embed-id='7557291169' data-style='standard' data-from-embed='false'></div><script src='https://strava-embeds.com/embed.js'></script>"
     },
 
     {
       "name": "Bellinzona – Lugano – Como – Mediolan",
     "difficulty": 7,
+    "distance": 126,
     "description": "To jedna z najpiękniejszych tras, jakie miałem okazję odkryć. W ciągu jednej podróży można odwiedzić aż cztery miasta i doświadczyć kontrastu między Szwajcarią a Włochami. Lazurowe jeziora Como i Lugano otoczone majestatycznymi górami latem tworzą niezapomniane widoki, które przyciągają niczym magnes. To miejsce, do którego chce się wracać, by znów poczuć jego ciepło i spokój.",
     "file_url": "gpx/Bel_med.gpx",
+    "right_button_url": "https://www.strava.com/activities/9674922663",
     "iframe_code": "<div class='strava-embed-placeholder' data-embed-type='activity' data-embed-id='9674922663' data-style='standard' data-from-embed='false'></div><script src='https://strava-embeds.com/embed.js'></script>"
     }
 
